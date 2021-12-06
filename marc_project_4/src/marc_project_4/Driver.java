@@ -4,8 +4,8 @@ public class Driver {
 
 	public static void main(String[] args) {
 		
-		//Helper.BasicTreeTest(); //binary search tree operating
+		Helper.BasicTreeTest(); //binary search tree operating
 		
-		Helper.AddressTesting();
+		//Helper.AddressTesting();
 	}
 }

@@ -33,11 +33,17 @@ public class Helper {
 		
 		//test insert
 		testTree1.insert(5);
+		
+		System.out.println(testTree1.getRootElement());
 		testTree1.insert(2);
+
+		
 		testTree1.insert(8);
 		testTree1.insert(4);
 		testTree1.insert(7);
 		testTree1.insert(9);
+		
+		testTree1.remove(5);
 		
 		
 		 //tree assembled correctly
@@ -50,7 +56,7 @@ public class Helper {
 		 */
 		
 		//test remove
-		testTree1.remove(8);
+	//	testTree1.remove(8);
 		
 		 //tree removal correctly [elemeent in middle]
 		/*				TREE::
@@ -61,7 +67,7 @@ public class Helper {
 		 * 			       4  7  
 		 */
 		
-		testTree1.remove(7);
+//		testTree1.remove(7);
 		 //tree removal correctly [leaf]
 		/*				TREE::
 		 * 					5
@@ -71,7 +77,7 @@ public class Helper {
 		 * 			       4  7  
 		 */
 
-		testTree1.remove(5);
+	//	testTree1.remove(5);
 		 //tree removal correctly [base]
 		/*				TREE::
 		 * 					5
@@ -83,15 +89,19 @@ public class Helper {
 		
 		
 		
-		System.out.println(testTree1.baseTree.getRootElement());
+	//	System.out.println(testTree1.baseTree.getRootElement());
 		
 		//search testing space
-		System.out.println(testTree1.search(4));
+	//	System.out.println(testTree1.search(4));
 		
-		System.out.println(testTree1.search(100));
+	//	System.out.println(testTree1.search(100));
+		
+		
+		System.out.println(testTree1.getRootElement());
+		System.out.println(testTree1.getRoot().getLeft().getElement());
 	}
 
-	
+	/*
 	public static void AddressTesting() {
 		
 		Address address1 = new Address("street","city","ST","zip");
@@ -122,5 +132,6 @@ public class Helper {
 		System.out.println(book1.search(contact1));
 		
 	}
+	*/
 	
 }

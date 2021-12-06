@@ -16,13 +16,13 @@ public class TreeIterator<T extends Comparable<T>> implements java.util.Iterator
 	}
 	
 	
-	private BaseBinaryTree<T> tree;
+	private TreeNode<T> tree;
 	
 	private LinkedList <TreeNode<T>> list;
 	
 	
 	
-	public TreeIterator(BaseBinaryTree<T> tree) {
+	public TreeIterator(TreeNode<T> tree) {
 		this.tree=tree;
 		
 		this.list=new LinkedList<TreeNode<T>>();
@@ -43,7 +43,7 @@ public class TreeIterator<T extends Comparable<T>> implements java.util.Iterator
 	
 	public void setPreorder() {
 		this.list.clear();
-		this.preorder(this.tree.root);
+		this.preorder(this.tree);
 	}
 	
 	private void inorder(TreeNode<T> treeNode) {
@@ -56,7 +56,7 @@ public class TreeIterator<T extends Comparable<T>> implements java.util.Iterator
 	
 	public void setInorder() {
 		this.list.clear();
-			this.inorder(this.tree.root);
+			this.inorder(this.tree);
 	}
 	
 	public void postOrder(TreeNode<T> treeNode) {
@@ -69,7 +69,7 @@ public class TreeIterator<T extends Comparable<T>> implements java.util.Iterator
 	
 	public void setPostOrder() {
 		this.list.clear();
-		this.postOrder(this.tree.root);
+		this.postOrder(this.tree);
 	}
 
 }

@@ -2,9 +2,11 @@ package marc_project_4;
 
 //individual nodes of the binary tree
 
-public class TreeNode<T extends Comparable<T>>  implements Comparable<T>{
+public class TreeNode<T>{
 	
 	private T element;//element of specified node
+	
+	//protected String key;
 	
 	private TreeNode<T> left;//pointer to the next left node
 	
@@ -28,6 +30,8 @@ public class TreeNode<T extends Comparable<T>>  implements Comparable<T>{
 	public TreeNode(T element) {
 		this.element=element;//element is the passed paramter
 		
+		//this.key = String.valueOf(element);
+		
 		this.left=null;//left is set to null
 		
 		this.right=null;//right is set to null
@@ -39,6 +43,8 @@ public class TreeNode<T extends Comparable<T>>  implements Comparable<T>{
 	//right is the pointer to the right node
 	public TreeNode(T element, TreeNode<T> left, TreeNode<T> right) {
 		this.element=element;
+		
+		//this.key = String.valueOf(element);
 		
 		this.left=left;
 		
@@ -77,25 +83,23 @@ public class TreeNode<T extends Comparable<T>>  implements Comparable<T>{
 	}
 	
 	
-	@Override
-	public int compareTo(T o) throws TreeException{
-		if(this.element!=null && o != null)
-		{
-			if ((int) this.element < (int) o)
-				return -1;
-			else if (this.element == o)
-				return 0;
-			else {
-				return 1;
-			}
-		}
-		else
-		{
-				throw new TreeException("Cannot compare to null");
-		}
-
-
-	}
+//	@Override
+//	public int compareTo(T o) throws TreeException{
+//		if(this.element!=null && o != null)
+//		{
+//			if ((int) this.element < (int) o)
+//				return -1;
+//			else if (this.element == o)
+//				return 0;
+//			else {
+//				return 1;
+//			}
+//		}
+//		else
+//		{
+//				throw new TreeException("Cannot compare to null");
+//		}
+//	}
 	
 	
 

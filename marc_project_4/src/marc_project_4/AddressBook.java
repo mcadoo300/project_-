@@ -273,7 +273,7 @@ public class AddressBook {
 		
 		// remove item from list
 		// @paramaters element to remove
-
+/*
 		public void remove(Contact element) {
 
 			AdNode tempNode = this.root;// create a temporary node, start at base
@@ -326,66 +326,66 @@ public class AddressBook {
 		}
 		
 		
+	*////////////////////////////////////////////////////////////////////////////////////////////////////////////////////	
 		
 		
-		
-		// remove tree root and return the node of a new tree containing the remaining
-		// values
-		// @paramaters element, is the element to be removed, tree is the sub tree which
-		// should contain the element as the root of this tree
-		private AdNode removeElement(Contact element, AddressBook tree) {
-
-			AdNode tempNode = tree.root;// create a temporary node, start at base of tree
-
-			if (tempNode.getElement().getKey() == element.getKey())// compare root value to element
-			{
-
-				if (tempNode.getLeft() != null)// if the left sub tree is not null
-				{
-					AddressBook leftCopy = new AddressBook(tree.detachLeftSubtree());// copy left
-																												// sub tree
-																												// into new
-																												// node
-					if (tempNode.getRight() != null)// if teh right ALSO contains vales copy that sub tree
-					{
-						AddressBook rightCopy = new AddressBook(tree.detachRightSubtree());
-
-						// create iterator of left subtree
-						AddressIterator spc = new AddressIterator(leftCopy);
-						spc.setPreorder();
-
-						while (spc.hasNext()) {
-							rightCopy.insert(spc.next().getElement());// since the root of the right tree MUST be larger, insert the left
-															// into the right sub tree
-						}
-
-						tree.root = rightCopy.root;// pass the root of this tree as a return value, it now
-																		// contains all the values of the sub tree except
-																		// the root
-						return tree.root;
-					} else
-						tree.root = leftCopy.root;// if no right tree values, return the root of the left
-																	// sub tree, it contains all possible values
-
-				} else {
-					if (tempNode.getRight() == null)// if left AND right are null, return null
-						return null;
-					else// else, return the root of the right subtree, it contains all possible values
-					{
-
-						AddressBook rightCopy = new AddressBook(tree.detachRightSubtree());
-
-						tree.root = rightCopy.root;
-						
-						return tree.root;
-					}
-
-				}
-
-			}
-
-			return null;// any missed case will return null
-		}
-		
+//		// remove tree root and return the node of a new tree containing the remaining
+//		// values
+//		// @paramaters element, is the element to be removed, tree is the sub tree which
+//		// should contain the element as the root of this tree
+//		private AdNode removeElement(Contact element, AddressBook tree) {
+//
+//			AdNode tempNode = tree.root;// create a temporary node, start at base of tree
+//
+//			if (tempNode.getElement().getKey() == element.getKey())// compare root value to element
+//			{
+//
+//				if (tempNode.getLeft() != null)// if the left sub tree is not null
+//				{
+//					AddressBook leftCopy = new AddressBook(tree.detachLeftSubtree());// copy left
+//																												// sub tree
+//																												// into new
+//																												// node
+//					if (tempNode.getRight() != null)// if teh right ALSO contains vales copy that sub tree
+//					{
+//						AddressBook rightCopy = new AddressBook(tree.detachRightSubtree());
+//
+////						// create iterator of left subtree
+////						AddressIterator spc = new AddressIterator(leftCopy);
+////						spc.setPreorder();
+//
+//						while (spc.hasNext()) {
+//							rightCopy.insert(spc.next().getElement());// since the root of the right tree MUST be larger, insert the left
+//															// into the right sub tree
+//						}
+//
+//						tree.root = rightCopy.root;// pass the root of this tree as a return value, it now
+//																		// contains all the values of the sub tree except
+//																		// the root
+//						return tree.root;
+//					} else
+//						tree.root = leftCopy.root;// if no right tree values, return the root of the left
+//																	// sub tree, it contains all possible values
+//
+//				} else {
+//					if (tempNode.getRight() == null)// if left AND right are null, return null
+//						return null;
+//					else// else, return the root of the right subtree, it contains all possible values
+//					{
+//
+//						AddressBook rightCopy = new AddressBook(tree.detachRightSubtree());
+//
+//						tree.root = rightCopy.root;
+//						
+//						return tree.root;
+//					}
+//
+//				}
+//
+//			}
+//
+//			return null;// any missed case will return null
+//		}
+//		
 
 }
