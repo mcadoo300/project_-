@@ -16,13 +16,14 @@ public class TreeIterator<T extends Comparable<T>> implements java.util.Iterator
 	}
 	
 	
-	private BaseBinaryTree<T> tree;
+	private TreeNode<T> tree;//node represents root
 	
-	private LinkedList <TreeNode<T>> list;
+	private LinkedList <TreeNode<T>> list;//linked list of nodes
 	
 	
-	
-	public TreeIterator(BaseBinaryTree<T> tree) {
+	//default constructor
+	//@paramater treenode
+	public TreeIterator(TreeNode<T> tree) {
 		this.tree=tree;
 		
 		this.list=new LinkedList<TreeNode<T>>();
@@ -33,6 +34,7 @@ public class TreeIterator<T extends Comparable<T>> implements java.util.Iterator
 		throw new UnsupportedOperationException();
 	}
 	
+	//helper method for setting preorder
 	private void preorder(TreeNode<T> treeNode) {
 		if(treeNode != null) {
 			this.list.add(treeNode);
@@ -40,25 +42,29 @@ public class TreeIterator<T extends Comparable<T>> implements java.util.Iterator
 			preorder(treeNode.getRight());
 		}
 	}
-	
+	//set this list to preorder
 	public void setPreorder() {
 		this.list.clear();
-		this.preorder(this.tree.root);
+		this.preorder(this.tree);
 	}
 	
+	//helper method to setinorder
 	private void inorder(TreeNode<T> treeNode) {
 		if(treeNode != null) {
 			inorder(treeNode.getLeft());
 			this.list.add(treeNode);
-			inorder(treeNode.getLeft());
+			inorder(treeNode.getRight());
 		}
 	}
 	
+	//set this into inorder
 	public void setInorder() {
 		this.list.clear();
-			this.inorder(this.tree.root);
+			this.inorder(this.tree);
 	}
 	
+	//helper
+	//set this list into post order
 	public void postOrder(TreeNode<T> treeNode) {
 		if(treeNode != null) {
 			postOrder(treeNode.getLeft());
@@ -67,9 +73,10 @@ public class TreeIterator<T extends Comparable<T>> implements java.util.Iterator
 		}
 	}
 	
+	//set this list into postorder
 	public void setPostOrder() {
 		this.list.clear();
-		this.postOrder(this.tree.root);
+		this.postOrder(this.tree);
 	}
 
 }
